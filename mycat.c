@@ -21,9 +21,24 @@ int main(int argc, char *argv[]) {
 
 	//open file
 	//
+
+
+	if((fd=open(argv[1],O_RDONLY))<0){
+		printf("error");
+		exit(1);
+
+	}
+
+
 	//read file
 	//
+
+	read(fd,buf,BUF_SIZE);
+	puts(buf);
+
 	//close file
+	
+	close(fd);
 
 	printf("********** read %s finish **********\n", argv[1]);
 	return 0;
